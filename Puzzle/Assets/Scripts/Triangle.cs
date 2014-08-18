@@ -11,6 +11,8 @@ class Triangle
 
     GameObject go;
 
+    List<GameObject> lines;
+
     //not sure if line colors should be supplied here, or if the triangle should randomize them by itself etc
     public Triangle(TriangleType type, Vector2 position, Color[] lineColors) 
     {
@@ -22,8 +24,25 @@ class Triangle
         //go.transform.position = position;
 
 
-        //Todo set triangle line colors
+        //Find lines of this triangle
+        lines = new List<GameObject>();
+        foreach(Transform child in go.transform)
+        {
+             if(Enum.IsDefined(typeof(LineNames), child.name)) 
+             {
+                 lines.Add(child.gameObject);
+             }
+        }
+        //Todo set the colors to the lines we just found
     }
+}
+
+enum LineNames
+{
+    up,
+    right,
+    left,
+    down
 }
 
 enum TriangleType
