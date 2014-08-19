@@ -217,9 +217,6 @@ $RECYCLE.BIN/
 # Unity generated #
 # =============== #
 Temp/
-Obj/
-UnityGenerated/
-Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
