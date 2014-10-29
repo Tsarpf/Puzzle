@@ -16,30 +16,11 @@ class Triangle
     Triangle rightChild;
     Triangle leftChild;
 
-    //not sure if line colors should be supplied here, or if the triangle should randomize them by itself etc
-    public Triangle(Vector2 position) 
+    public Triangle(Vector2 position, UnityEngine.Object prefab) 
     {
-
-        //Not sure which is better, this or the other two lines
-        go = UnityEngine.Object.Instantiate(triangle, position, new Quaternion()) as GameObject;
-        //Alternative way to do the thing above
-        //go = UnityEngine.Object.Instantiate(triangles[(int)type]) as GameObject;
-        //go.transform.position = position;
+        //todo: random orientation (and color?)
+        go = UnityEngine.Object.Instantiate(prefab, position, new Quaternion()) as GameObject;
 
     }
 }
 
-enum LineNames
-{
-    up,
-    right,
-    left,
-    down
-}
-
-enum TriangleType
-{
-    First,
-    Second,
-    Third
-}
